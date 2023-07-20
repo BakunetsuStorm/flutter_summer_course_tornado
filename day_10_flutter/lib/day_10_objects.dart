@@ -49,7 +49,7 @@ class Hero {
   }
 
   void protectCivilians() {
-    print('KUSO YAROUU, KORE WA ORE NI SAIGOU NI ATTAKKU DA');
+    print('KUSO YAROUU, KORE WA ORE NO SAIGOU NI ATTAKKU DA');
     print('KA');
     print('ME');
     print('HA');
