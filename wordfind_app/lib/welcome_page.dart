@@ -27,7 +27,7 @@ class WelcomePage extends StatelessWidget {
               GradientText('game', 31.6),
             ],
           ));
-         Expanded(child: GradientText())],
+         Expanded(child: GradientText('Ready?', 25.0))],
       ),
     )));
   }
