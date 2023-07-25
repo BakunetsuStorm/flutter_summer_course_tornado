@@ -10,8 +10,9 @@ class GradientLetter extends StatelessWidget {
     return Container(
       width: 60,
       height: 60,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(16)),
-      color: const Color(0xFFFF9002),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          color: const Color(0xFFFF9002)),
       child: FractionallySizedBox(
         widthFactor: 2 / 3,
         heightFactor: 2 / 3,
@@ -44,8 +45,5 @@ class GradientLetter extends StatelessWidget {
         ),
       ),
     );
-
   }
-
-
 }
