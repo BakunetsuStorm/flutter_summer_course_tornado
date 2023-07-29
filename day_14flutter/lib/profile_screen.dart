@@ -64,7 +64,7 @@ class ProfileScreen extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        _buildIcon(Icons.restaurant, 'Feed'),
+        _buildIcon(Icons.restaurant, 'Poor sinned souls'),
         _buildIcon(Icons.favorite, 'Barbie'),
         _buildIcon(Icons.card_travel, 'Mojo Dojo Casa'),
       ],
