@@ -82,7 +82,7 @@ class StartButton extends StatelessWidget {
             fontWeight: FontWeight.w700,
           ),
         ),
-      ),
+       ),
     );
   }
 }
