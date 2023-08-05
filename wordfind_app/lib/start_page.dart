@@ -44,7 +44,7 @@ class _StartPageState extends State<StartPage> {
               ),
               Padding(padding: EdgeInsets.only(top: 20)),
               GradientText('Player Name', 20.0),
-              InputField(),
+              InputField(onSubmitted:),
               Padding(padding: EdgeInsets.only(top: 20)),
 
             ],

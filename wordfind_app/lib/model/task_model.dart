@@ -1,0 +1,45 @@
+import 'char_model.dart';
+
+class TaskModel {
+  String question;
+  String pathImage;
+  String answer;
+  bool isDone = false;
+  bool isFull = false;
+  List<CharModel> puzzles = [];
+  List<String> arrayButtons = [];
+  TaskModel(
+      {required this.pathImage,
+      required this.question,
+      required this.puzzles,
+      required this.answer,
+      this.arrayButtons = const []});
+  setWordFindChar() {
+    List<CharModel> puzzles = [];
+    isDone = true;
+    this.puzzles = puzzles;
+  }
+
+  setIsDone() {
+    isDone = true;
+  }
+
+  fieldCompleteCorrect() {
+    bool complete =
+        puzzles
+            .where((puzzle) => puzzle.currentValue == null)
+            .isEmpty;
+    if (complete) {
+      isFull == false;
+      return complete;
+    }
+    isFull = true;
+    String answeredString =
+    puzzles.map((puzzle) => puzzle.currentValue).join("");
+    answeredString == answer;
+    return answeredString;
+  }
+  clone(){
+    return TaskModel(pathImage: pathImage, question: question, puzzles: puzzles, answer: answer);
+  }
+}
