@@ -11,7 +11,6 @@ class TaskModel {
   TaskModel(
       {required this.pathImage,
       required this.question,
-      required this.puzzles,
       required this.answer,
       this.arrayButtons = const []});
   setWordFindChar() {
@@ -40,6 +39,6 @@ class TaskModel {
     return answeredString;
   }
   clone(){
-    return TaskModel(pathImage: pathImage, question: question, puzzles: puzzles, answer: answer);
+    return TaskModel(pathImage: pathImage, question: question,  answer: answer);
   }
 }

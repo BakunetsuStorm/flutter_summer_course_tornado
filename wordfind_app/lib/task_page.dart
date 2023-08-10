@@ -1,8 +1,30 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:wordfind_app/data/questions.dart';
+import 'package:wordfind_app/model/user_model.dart';
 
-class TaskPage extends StatelessWidget {
-  const TaskPage({super.key});
+import 'model/task_model.dart';
 
+class TaskPage extends StatefulWidget {
+  const TaskPage(this.user,{super.key});
+  final User user ;
+
+  @override
+  State<TaskPage> createState() => _TaskPageState();
+
+}
+
+class _TaskPageState extends State<TaskPage> {
+  late List<TaskModel> listQuestions;
+  late User user;
+  @override
+  void initState() {
+    listQuestions = questions;
+    user = widget.user;
+
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,13 +32,13 @@ class TaskPage extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: Image.asset('assets/arrow_back.png'),
-          onPressed: () {},
+          onPressed: () {Navigator.pop(context);},
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
         title: Text(
-          'Ryan Gosling',
+          '${user.userName}',
           style: TextStyle(fontSize: 24, color: Color(0xFFE86B02)),
         ),
       ),
