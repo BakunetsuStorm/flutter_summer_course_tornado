@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wordfind_app/Gradient_letter.dart';
+import 'package:wordfind_app/gradient_letter.dart';
 import 'package:wordfind_app/gradient_text.dart';
 import 'package:wordfind_app/start_page.dart';
 
@@ -37,7 +37,6 @@ class WelcomePage extends StatelessWidget {
             )),
             Expanded(child: Image(image: AssetImage('assets/iCodeGuy.png'))),
             Expanded(child: GradientText('Ready?', 25.0)),
-
           ],
         ),
       ),

@@ -17,7 +17,7 @@ List<TaskModel> questions = [
       question: 'What is this animal name?',
       answer: 'Wolf'),
   TaskModel(
-      pathImage: 'https://www.pexels.com/photo/illuminated-tower-2614818/',
+      pathImage: 'https://www.japan-guide.com/g18/3009_01.jpg',
       question: 'What is the location of this place?',
       answer: 'Tokyo'),
   TaskModel(
@@ -27,7 +27,7 @@ List<TaskModel> questions = [
       answer: 'Itachi'),
   TaskModel(
       pathImage:
-          'https://en.wikipedia.org/wiki/Gohan#/media/File:AdultSonGohan.jpg',
+          'https://static.wikia.nocookie.net/disneythehunchbackofnotredame/images/6/61/1250396328264_f.jpg/revision/latest?cb=20140912043440',
       question: 'What is his name?',
-      answer: 'Son Gohan')
+      answer: 'Gohan')
 ];

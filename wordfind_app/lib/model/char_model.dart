@@ -1,8 +1,9 @@
 class CharModel {
-   String? currentValue;
-   int? currentIndex;
-   String? correctValue;
+  String? currentValue;
+  int? currentIndex;
+  String? correctValue;
   bool hintShow;
+
   CharModel({
     this.correctValue,
     this.currentIndex,
@@ -10,19 +11,16 @@ class CharModel {
     this.hintShow = false,
   });
 
-   _getCurrentValue(){
-    if(
-    correctValue!=null
-    ){return currentValue;}
-    else if (correctValue!=hintShow){
+  getCurrentValue() {
+    if (correctValue != null) {
+      return currentValue;
+    } else if (hintShow) {
       return correctValue;
     }
-
-
-  }
-   void _clearValue(){
-     currentIndex = null;
-     currentValue = null;
   }
 
+  void clearValue() {
+    currentIndex = null;
+    currentValue = null;
+  }
 }

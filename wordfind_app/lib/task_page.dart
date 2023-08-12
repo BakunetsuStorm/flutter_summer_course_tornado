@@ -1,22 +1,23 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:wordfind_app/Task_widget.dart';
 import 'package:wordfind_app/data/questions.dart';
 import 'package:wordfind_app/model/user_model.dart';
 
 import 'model/task_model.dart';
 
 class TaskPage extends StatefulWidget {
-  const TaskPage(this.user,{super.key});
-  final User user ;
+  const TaskPage(this.user, {super.key});
+  final User user;
 
   @override
   State<TaskPage> createState() => _TaskPageState();
-
 }
 
 class _TaskPageState extends State<TaskPage> {
   late List<TaskModel> listQuestions;
+  GlobalKey<TaskWidgetState> globalKey = GlobalKey();
   late User user;
   @override
   void initState() {
@@ -25,6 +26,7 @@ class _TaskPageState extends State<TaskPage> {
 
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +34,9 @@ class _TaskPageState extends State<TaskPage> {
       appBar: AppBar(
         leading: IconButton(
           icon: Image.asset('assets/arrow_back.png'),
-          onPressed: () {Navigator.pop(context);},
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -45,7 +49,15 @@ class _TaskPageState extends State<TaskPage> {
       body: SafeArea(
         child: Column(
           children: [
-            Expanded(child: Container()),
+            Expanded(child: LayoutBuilder(
+              builder: (context, constraints) {
+                return TaskWidget(
+                  constraints.biggest,
+                  listQuestions.map((question) => question.clone()).toList(),
+                  key: globalKey,
+                );
+              },
+            )),
             Container(
               width: double.maxFinite,
               padding: EdgeInsets.only(bottom: 10),
@@ -62,7 +74,13 @@ class _TaskPageState extends State<TaskPage> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      globalKey.currentState?.generatePuzzle(
+                        loop: listQuestions
+                            .map((question) => question.clone())
+                            .toList(),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.transparent,
                         elevation: 0,
