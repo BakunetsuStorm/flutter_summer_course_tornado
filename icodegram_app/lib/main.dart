@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const );
+  runApp(MaterialApp(
+    title: "Twicetagram",
+    theme: ThemeData(fontFamily: 'Lobster'),
+    home: const login,
+  ), );
 }
