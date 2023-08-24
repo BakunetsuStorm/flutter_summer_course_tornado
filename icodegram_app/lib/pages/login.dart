@@ -43,9 +43,10 @@ class _LoginScreenState extends State<LoginScreen> {
           padding: EdgeInsets.symmetric(horizontal: 32),
           width: double.infinity,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Flexible(flex: 2, child: Container()),
+              // Flexible(flex: 2, child: Container()),
               Text('Twicetagram'),
               SizedBox(height: 64),
               TextInputField(
@@ -79,17 +80,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               SizedBox(height: 12),
-              Flexible(
-                child: Container(),
-                flex: 2,
-              ),
+
               Text("Эсвэл",
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
                   )),
               SizedBox(height: 12),
-              Flexible(child: Container(), flex: 4),
+              // Flexible(child: Container(), flex: 4),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -100,20 +98,20 @@ class _LoginScreenState extends State<LoginScreen> {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  Text(
-                    "Бүртгүүлэх",
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.orange),
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpScreen()));
+                    },
+                    child: Text(
+                      "Бүртгүүлэх",
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.orange),
+                    ),
                   ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  Flexible(
-                    child: Container(),
-                    flex: 2,
-                  )
+
+
                 ],
               ),
             ],

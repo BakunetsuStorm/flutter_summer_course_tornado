@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:icodegram_app/pages/login.dart';
 import 'package:icodegram_app/resources/auth_methods.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -11,7 +12,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
-  final TextEditingController _validatePasswordController = TextEditingController();
+  final TextEditingController _validatePasswordController =
+      TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,10 +80,39 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Text('Бүртгүүлэх'),
                 ),
               ),
-              SizedBox(
-                height: 12,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Бүртгэлтэй юу?  ",
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LoginScreen()));
+                    },
+                    child: Text(
+                      "Нэвтрэх",
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.orange),
+                    ),
+                  ),
+                  Flexible(
+                    child: Container(),
+                    flex: 2,
+                  ),
+                ],
               ),
-              Flexible(flex: 2, child: Container())
+
             ],
           ),
         ),
@@ -97,10 +128,10 @@ class TextInputField extends StatelessWidget {
   final TextInputType textInputType;
   const TextInputField(
       {super.key,
-        required this.hintText,
-        required this.isPassword,
-        required this.editingController,
-        required this.textInputType});
+      required this.hintText,
+      required this.isPassword,
+      required this.editingController,
+      required this.textInputType});
 
   @override
   Widget build(BuildContext context) {
@@ -109,11 +140,11 @@ class TextInputField extends StatelessWidget {
       decoration: InputDecoration(
           hintText: this.hintText,
           border:
-          OutlineInputBorder(borderSide: Divider.createBorderSide(context)),
+              OutlineInputBorder(borderSide: Divider.createBorderSide(context)),
           focusedBorder:
-          OutlineInputBorder(borderSide: Divider.createBorderSide(context)),
+              OutlineInputBorder(borderSide: Divider.createBorderSide(context)),
           enabledBorder:
-          OutlineInputBorder(borderSide: Divider.createBorderSide(context)),
+              OutlineInputBorder(borderSide: Divider.createBorderSide(context)),
           filled: true,
           contentPadding: EdgeInsets.all(8)),
       obscureText: this.isPassword,
